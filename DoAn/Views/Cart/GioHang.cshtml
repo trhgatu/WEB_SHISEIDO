@@ -1,0 +1,126 @@
+﻿@using DoAn.Models;
+@model List<Cart>
+@{
+    ViewBag.Title = "GioHang";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<body>
+    <div class="container px-3 my-5 clearfix">
+
+        <div class="card">
+            <div class="card-header">
+                <h2>Shopping Cart</h2>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered m-0">
+                        <thead>
+                            <tr>
+                                <th class="text-center py-3 px-4" style="min-width: 400px;">Tên sản phẩm &amp; Chi tiết sản phẩm</th>
+                                <th class="text-center py-3 px-4" style="width: 100px;">Giá</th>
+                                <th class="text-center py-3 px-4" style="width: 120px;">Số lượng</th>
+                                <th class="text-center py-3 px-4" style="width: 100px;">Tổng</th>
+                                <th class="text-center py-3 px-4" style="width: 100px;">Cập nhật</th>
+                                <th class="text-center align-middle py-3 px-0" style="width: 80px;"><a href="#" class="shop-tooltip float-none text-light" title data-original-title="Clear cart"><i class="ino ion-md-trash"></i></a>Xóa</th>
+                                <th class="text-center py-3 px-4" style="width: 100px;">@Html.ActionLink("Xóa tất cả", "XoaGioHang_All", "Cart")</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    @using (Html.BeginForm("CapNhatGioHang", "Cart", new { @MaSP = item.iProductID }))
+                                    {
+                                        <td class="p-4">
+                                            <div class="media align-items-center" style="display:flex">
+                                                <img src="~/Assets/Client/images/@item.sThumb" class="d-block ui-w-40 ui-bordered mr-4" alt>
+
+                                                <div class="media-body" style="padding-left:20px">
+                                                    <a href="@Url.Action("XemChiTiet", "Products", new { @id = item.iProductID })" class="d-block text-dark">@item.sProductName</a>
+
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td class="text-right font-weight-semibold align-middle p-4">@String.Format("{0:0,0}", item.dUnitPrice) </td>
+                                        <td class="align-middle p-4"><input type="number" name="txtSoLuong" min="1" size="1" class="form-control text-center" value="@item.iQuantity"></td>
+                                        <td class="text-right font-weight-semibold align-middle p-4">@String.Format("{0:0,0}", item.dTotalPrice)</td>
+                                        <td class="align-middle p-4"><input type="submit" value="Cập nhật" class="btn btn-success" /></td>
+                                        <td class="text-center align-middle px-0">
+                                            <a href="@Url.Action("XoaGioHang", "Cart", new { @MaSP = item.iProductID })" class="shop-tooltip close float-none text-danger" title data-original-title="Remove">×</a>
+                                        </td>
+                                        <td></td>
+
+                                    }
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="d-flex flex-wrap justify-content-between align-items-center pb-4">
+                    <div class="mt-4">
+
+                    </div>
+                    <div class="d-flex">
+                        <div class="text-right mt-4 mr-5" style="padding-right: 50px ">
+                            <label class="text-muted font-weight-normal m-0">Tổng số lượng</label>
+                            <div class="text-large"><strong>@ViewBag.TongSoLuong</strong></div>
+                        </div>
+                        <div class="text-md-center mt-4">
+                            <label class="text-muted font-weight-normal m-0">Tổng thành tiền</label>
+                            <div class="text-large"><strong>@String.Format("{0:0,0}", ViewBag.TongThanhTien) VND</strong></div>
+                        </div>
+                    </div>
+                </div>
+                @{ var cus = Session["User"] as DoAn.Models.Customers;}
+                @{
+                    if (cus == null)
+                    {
+                        <div class="float-right">                 
+                            <button class="btn btn-outline-dark">@Html.ActionLink("Đăng nhập tài khoản và thực hiện mua sắm !", "Login", "Home")</button>
+                        </div>
+                    }
+                    else
+                    {
+                        <div class="float-right">
+                            <button class="btn btn-outline-dark">@Html.ActionLink("Tiếp tục mua sắm", "AllChamSocDa", "Products")</button>
+                            <button class="btn btn-outline-dark" style="float:right">@Html.ActionLink("Thanh toán", "Pay", "Payment")</button>
+                        </div>
+                    }
+                }
+
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+
+<style type="text/css">
+
+    a {
+        color: #000000;
+    }
+    .ui-w-40 {
+        width: 80px !important;
+        height: auto;
+        box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+    }
+
+    .card {
+        box-shadow: 0 1px 15px 1px rgba(52,40,104,.08);
+    }
+
+    .ui-product-color {
+        display: inline-block;
+        overflow: hidden;
+        margin: .144em;
+        width: .875rem;
+        height: .875rem;
+        border-radius: 10rem;
+        -webkit-box-shadow: 0 0 0 1px rgba(0,0,0,0.15) inset;
+        box-shadow: 0 0 0 1px rgba(0,0,0,0.15) inset;
+        vertical-align: middle;
+    }
+</style>

@@ -1,0 +1,98 @@
+﻿@model IEnumerable<DoAn.Models.Customers>
+
+@{
+    ViewBag.Title = "Danh sách khách hàng";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card shadow mb-4" style="max-width: 1240px">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                Danh sách khách hàng
+                <a href="@Url.Action("ThemMoi","Customers")" style="float:right">Thêm mới</a>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>
+                            Họ tên
+                        </th>
+                        <th>
+                            Ngày sinh
+                        </th>
+                        <th>
+                            Ảnh đại diện
+                        </th>
+                        <th>
+                            Địa chỉ
+                        </th>
+                        <th>
+                            Email
+                        </th>
+                        <th>
+                            SDT
+                        </th>
+                        @*<th>
+                            Ngày tạo
+                        </th>*@
+                        <th>
+                            Mật khẩu
+                        </th>
+                        @*<th>
+                            Lần đăng nhập cuối
+                        </th>*@
+                        <th>
+                            Hoạt động
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FullName)
+                            </td>
+                            <td>
+                                @string.Format("{0:dd-MM-yyyy}" ,item.Birthday)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Avatar)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            @*<td>
+                                @string.Format("{0:dd-MM-yyyy}", item.CreateDate)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Password)
+                            </td>
+                            @*<td>
+                                @string.Format("{0:dd-MM-yyyy}", item.LastLogin)
+                            </td>*@
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Active)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { id = item.CustomerID }) |
+                                @Html.ActionLink("Details", "Details", new { id = item.CustomerID }) |
+                                @Html.ActionLink("Delete", "Delete", new { id = item.CustomerID })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

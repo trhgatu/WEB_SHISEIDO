@@ -1,0 +1,367 @@
+﻿@model DoAn.Models.Products
+
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="product-details container">
+    <div class="row">
+        <div class="pd-left col slideshow">
+            <div class="pd-mySlides mySlides">
+                <div class="mySlides-m1 pd-big-img">
+                    <img src="~/Assets/Client/images/@Html.DisplayFor(model => model.Thumb)" class="img-product-details">
+                </div>
+
+                <div class="mySlides-m1 pd-big-img">
+                    <img src="~/Assets/Client/images/@Html.DisplayFor(model => model.Picture1)" style="width:100%">
+                </div>
+
+                <div class="mySlides-m1 pd-big-img">
+                    <img src="~/Assets/Client/images/@Html.DisplayFor(model => model.Picture2)" style="width:100%">
+                </div>
+
+                <div class="mySlides-m1 pd-big-img">
+                    <img src="~/Assets/Client/images/@Html.DisplayFor(model => model.Picture3)" style="width:100%">
+                </div>
+
+                <a class="pd-prev" onclick="plusSlides01(-1)">❮</a>
+                <a class="pd-next" onclick="plusSlides01(1)">❯</a>
+
+                <div class="row pd-list-small-img">
+                    <div class="col pd-small-img">
+                        <img class="demo-m1 cursor" src="~/Assets/Client/images/@Html.DisplayFor(model => model.Thumb)" style="width:100%" onclick="currentSlide01(1)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m1 cursor" src="~/Assets/Client/images/@Html.DisplayFor(model => model.Picture1)" style="width:100%" onclick="currentSlide01(2)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m1 cursor" src="~/Assets/Client/images/@Html.DisplayFor(model => model.Picture2)" style="width:100%" onclick="currentSlide01(3)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m1 cursor" src="~/Assets/Client/images/@Html.DisplayFor(model => model.Picture3)" style="width:100%" onclick="currentSlide01(4)">
+                    </div>
+                </div>
+            </div>
+            <div class="pd-mySlides mySlides">
+                <div class="mySlides-m2 pd-big-img">
+                    <img src="~/Style/images/ba7051.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m2 pd-big-img">
+                    <img src="~/Style/images/ba7051-s2.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m2 pd-big-img">
+                    <img src="~/Style/images/ba7051-s3.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m2 pd-big-img">
+                    <img src="~/Style/images/ba7051-s4.jpg" style="width:100%">
+                </div>
+
+                <a class="pd-prev" onclick="plusSlides02(-1)">❮</a>
+                <a class="pd-next" onclick="plusSlides02(1)">❯</a>
+
+                <div class="row pd-list-small-img">
+                    <div class="col pd-small-img">
+                        <img class="demo-m2 cursor" src="~/Style/images/ba7051.jpg" style="width:100%" onclick="currentSlide02(1)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m2 cursor" src="~/Style/images/ba7051-s2.jpg" style="width:100%" onclick="currentSlide02(2)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m2 cursor" src="~/Style/images/ba7051-s3.jpg" style="width:100%" onclick="currentSlide02(3)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m2 cursor" src="~/Style/images/ba7051-s4.jpg" style="width:100%" onclick="currentSlide02(4)">
+                    </div>
+                </div>
+            </div>
+            <div class="pd-mySlides mySlides">
+                <div class="mySlides-m3 pd-big-img">
+                    <img src="~/Style/images/c15b59.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m3 pd-big-img">
+                    <img src="~/Style/images/c15b59-s2.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m3 pd-big-img">
+                    <img src="~/Style/images/c15b59-s3.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m3 pd-big-img">
+                    <img src="~/Style/images/c15b59-s4.jpg" style="width:100%">
+                </div>
+
+                <a class="pd-prev" onclick="plusSlides03(-1)">❮</a>
+                <a class="pd-next" onclick="plusSlides03(1)">❯</a>
+
+                <div class="row pd-list-small-img">
+                    <div class="col pd-small-img">
+                        <img class="demo-m3 cursor" src="~/Style/images/c15b59.jpg" style="width:100%" onclick="currentSlide03(1)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m3 cursor" src="~/Style/images/c15b59-s2.jpg" style="width:100%" onclick="currentSlide03(2)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m3 cursor" src="~/Style/images/c15b59-s3.jpg" style="width:100%" onclick="currentSlide03(3)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m3 cursor" src="~/Style/images/c15b59-s4.jpg" style="width:100%" onclick="currentSlide03(4)">
+                    </div>
+                </div>
+            </div>
+            <div class="pd-mySlides mySlides">
+                <div class="mySlides-m4 pd-big-img">
+                    <img src="~/Style/images/b05f4e.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m4 pd-big-img">
+                    <img src="~/Style/images/b05f4e-s2.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m4 pd-big-img">
+                    <img src="~/Style/images/b05f4e-s3.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m4 pd-big-img">
+                    <img src="~/Style/images/b05f4e-s4.jpg" style="width:100%">
+                </div>
+
+                <a class="pd-prev" onclick="plusSlides04(-1)">❮</a>
+                <a class="pd-next" onclick="plusSlides04(1)">❯</a>
+
+                <div class="row pd-list-small-img">
+                    <div class="col pd-small-img">
+                        <img class="demo-m4 cursor" src="~/Style/images/b05f4e.jpg" style="width:100%" onclick="currentSlide04(1)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m4 cursor" src="~/Style/images/b05f4e-s2.jpg" style="width:100%" onclick="currentSlide04(2)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m4 cursor" src="~/Style/images/b05f4e-s3.jpg" style="width:100%" onclick="currentSlide04(3)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m4 cursor" src="~/Style/images/b05f4e-s4.jpg" style="width:100%" onclick="currentSlide04(4)">
+                    </div>
+                </div>
+            </div>
+            <div class="pd-mySlides mySlides">
+                <div class="mySlides-m5 pd-big-img">
+                    <img src="~/Style/images/e27b97.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m5 pd-big-img">
+                    <img src="~/Style/images/e27b97-s2.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m5 pd-big-img">
+                    <img src="~/Style/images/e27b97-s3.jpg" style="width:100%">
+                </div>
+
+                <div class="mySlides-m5 pd-big-img">
+                    <img src="~/Style/images/e27b97-s4.jpg" style="width:100%">
+                </div>
+
+                <a class="pd-prev" onclick="plusSlides05(-1)">❮</a>
+                <a class="pd-next" onclick="plusSlides05(1)">❯</a>
+
+                <div class="row pd-list-small-img">
+                    <div class="col pd-small-img">
+                        <img class="demo-m5 cursor" src="~/Style/images/e27b97.jpg" style="width:100%" onclick="currentSlide05(1)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m5 cursor" src="~/Style/images/e27b97-s2.jpg" style="width:100%" onclick="currentSlide05(2)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m5 cursor" src="~/Style/images/e27b97-s3.jpg" style="width:100%" onclick="currentSlide05(3)">
+                    </div>
+                    <div class="col pd-small-img">
+                        <img class="demo-m5 cursor" src="~/Style/images/e27b97-s4.jpg" style="width:100%" onclick="currentSlide05(4)">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="pd-right col">
+            <div class="pd-title">
+                <h3 class="pd-brand">
+                    @Html.DisplayFor(model => model.Category.CateName)
+                </h3>
+                <h2 class="pd-name">
+                    <b>@Html.DisplayFor(model => model.ProductName)</b>
+                </h2>
+            </div>
+            <div class="pd-description">
+                <span>
+                    @Html.DisplayFor(model => model.Description)
+                    <br />
+                    Giá bán:@String.Format("{0:0,0}", Model.Price)
+                    <br />
+                    Size: @Html.DisplayFor(model => model.Size)
+                    <br />
+                    <a href="">More Details</a>
+                </span>
+            </div>
+            <div class="float-right" style="margin-top: 5%; margin-left: -2%;">
+
+                <a class="product-details" href="@Url.Action("ThemGioHang", "Cart", new { @ms = Model.ProductID, @strURL = Request.Url.ToString()})" style="border: 0;">
+                    <button class="btn btn-outline-dark">Thêm vào giỏ hàng </button>
+                </a>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<script>
+    let slideIndex = 1;
+    showSlides01(slideIndex);
+    showSlides02(slideIndex);
+    showSlides03(slideIndex);
+    showSlides04(slideIndex);
+    showSlides05(slideIndex);
+    showSlidesPD(slideIndex);
+
+    function plusSlides01(n) {
+        showSlides01(slideIndex += n);
+    }
+
+    function plusSlides02(n) {
+        showSlides02(slideIndex += n);
+    }
+
+    function plusSlides03(n) {
+        showSlides03(slideIndex += n);
+    }
+
+    function plusSlides04(n) {
+        showSlides04(slideIndex += n);
+    }
+
+    function plusSlides05(n) {
+        showSlides05(slideIndex += n);
+    }
+
+    function currentSlidePD(n) {
+        showSlidesPD(slideIndex = n);
+    }
+
+    function currentSlide01(n) {
+        showSlides01(slideIndex = n);
+    }
+
+    function currentSlide02(n) {
+        showSlides02(slideIndex = n);
+    }
+
+    function currentSlide03(n) {
+        showSlides03(slideIndex = n);
+    }
+
+    function currentSlide04(n) {
+        showSlides04(slideIndex = n);
+    }
+
+    function currentSlide05(n) {
+        showSlides05(slideIndex = n);
+    }
+
+    function showSlides01(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides-m1");
+        let dots = document.getElementsByClassName("demo-m1");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    function showSlides02(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides-m2");
+        let dots = document.getElementsByClassName("demo-m2");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    function showSlides03(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides-m3");
+        let dots = document.getElementsByClassName("demo-m3");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    function showSlides04(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides-m4");
+        let dots = document.getElementsByClassName("demo-m4");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    function showSlides05(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides-m5");
+        let dots = document.getElementsByClassName("demo-m5");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+    function showSlidesPD(n) {
+        let i;
+        let slides = document.getElementsByClassName("pd-mySlides");
+        let dots = document.getElementsByClassName("dotPD");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+
+</script>
+

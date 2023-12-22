@@ -1,0 +1,130 @@
+﻿@model IEnumerable<DoAn.Models.Products>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card shadow mb-4" style="max-width: 1240px">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                <a href="@Url.Action("Create","Products")" style="float:right">Thêm sản phẩm mới</a>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>
+                            Tên sản phẩm
+                        </th>
+                   
+                        <th>
+                            Mô tả
+                        </th>
+                        <th>
+                            Giá 
+                        </th>
+                        <th>
+                            Ảnh đại diện
+                        </th>
+                        <th>
+                            Ngày tạo
+                        </th>
+                        <th>
+                            Bán chạy
+                        </th>
+                        <th>
+                            Home flag
+                        </th>
+                        <th>
+                            Hoạt động
+                        </th>
+                        <th>
+                            Tiêu đề
+                        </th>
+                        <th>
+                            Size
+                        </th>
+                        <th>
+                            Ảnh 1
+                        </th>
+                        <th>
+                            Ảnh 2
+                        </th>
+                        <th>
+                            Ảnh 3
+                        </th>
+                        <th>
+                            Ảnh 4
+                        </th>
+                        <th>
+                            Danh mục    
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProductName)
+                            </td>
+                          
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Price)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Thumb)
+                            </td>
+                   
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateCreated)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.BestSellers)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HomeFlag)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Active)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Title)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Size)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Picture1)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Picture2)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Picture3)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Picture4)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Category.CateName)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Sửa", "Edit", new { id = item.ProductID }) |
+                                @Html.ActionLink("Chi tiết", "Details", new { id = item.ProductID }) |
+                                @Html.ActionLink("Xóa", "Delete", new { id = item.ProductID })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

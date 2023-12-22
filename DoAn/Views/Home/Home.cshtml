@@ -1,0 +1,694 @@
+﻿@model IEnumerable<DoAn.Models.Products>
+
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container-fluid">
+    <div class="main-1 container">
+        <div class="slideshow-container">
+            <div class="mySlides">
+                <img src="~/Assets/Client/images/background_1.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="~/Assets/Client/images/background_2.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="~/Assets/Client/images/background_3.jpg" style="width:100%">
+            </div>
+
+            <div class="mySlides">
+                <img src="~/Assets/Client/images/background_4.jpg" style="width:100%">
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
+        <br>
+
+
+        <div class="dot-main" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+            <span class="dot" onclick="currentSlide(3)"></span>
+            <span class="dot" onclick="currentSlide(4)"></span>
+        </div>
+    </div>
+    <div class="main-3 container-fluid">
+        <div class="row main-3-row">
+            <div class="col main-3-row-col-1">
+                <h1><b>SKIN</b> CARE</h1>
+                <h3><b>Đánh thức sinh lực làn da với<br /> Retinol tinh khiết*1</b></h3>
+                <p>Công nghệ từ SHISEIDO giúp bảo toàn retinol, giải<br /> phóng dưỡng chất trực tiếp vào da. Giảm rõ rệt nếp<br /> nhăn sâu và làm mờ đốm nâu chỉ trong 1 tuần.*2</p>
+                <p style="color: #888888;margin-bottom: 25px;">*1 Không phải dẫn xuất.<br />*2 Dựa trên kiểm nghiệm người tiêu<br /> dùng trên 109 phụ nữ.</p>
+                <a href=""><b>KHÁM PHÁ<i class="fa-solid fa-chevron-right"></i> </b></a>
+                <p style="margin-top: 45px;margin-bottom: 45px;">VITAL PERFECTION<br /><b>Intensive WrinkleSpot Treatment</b></p>
+                <a href=""><b>KHÁM PHÁ <i class="fa-solid fa-chevron-right"></i></b></a>
+            </div>
+            <div class="col main-3-row-col-2">
+                <a href="">KHÁM PHÁ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;</a>
+            </div>
+        </div>
+    </div>
+    <div class="main-4 container">
+        <div class=" main-4-title">
+            <h3><b>SKIN CARE BEST SELLERS</b></h3>
+        </div>
+        <div class="container">
+            <div class="row main-product">
+                @foreach (var item in Model)
+                {
+                    <div class="col-3 product-tdm">
+                        <div class="badge-bestsellers">
+                            <span class="badge" style="z-index:5">Best Seller</span>
+                        </div>                        
+                        <div class="slideshow-container ">
+
+                            <img src="~/Assets/Client/images/@item.Thumb" class="img-products">
+                            <div class="title-product">
+                                <a href="#">
+                                    <h4>@Html.DisplayFor(modelItem => item.Category.CateName)</h4>
+                                    <h5>@item.ProductName</h5>
+                                </a>
+                            </div>
+                            <div class="link-products-detail">
+                                <a class="product-details" href="@Url.Action("XemChiTiet", "Products", new { @id = item.ProductID})">
+                                    Xem Chi Tiết
+                                </a>
+                                <a class="product-details" href="@Url.Action("ThemGioHang", "Cart", new { @ms = item.ProductID, @strURL = Request.Url.ToString()})" style="border: 0">
+                                    <i class="fa-solid fa-cart-plus fa-xl nav-item" style="color: #ffffff; color: black; padding-left: 90px"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    <div class="main-5 container-fluid">
+        <div class="row main-5-row">
+            <div class="col main-5-row-col-2" style="background-image:url(/Assets/Client/images/main-5.jpg)">
+                <a href="">KHÁM PHÁ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;</a>
+            </div>
+            <div class="col main-5-row-col-1">
+                <h1>
+                    <b>
+                        FUTURE
+                        SOLUTION<br />
+                    </b>LX
+                </h1>
+                <h3>
+                    <b>
+                        Đôi mắt vĩnh cửu.<br />
+                        Vẻ đẹp vượt thời gian.
+                    </b>
+                </h3>
+                <p>
+                    Bí mật của tự nhiên được giải mã giúp<br>
+                    tái sinh vẻ đẹp làn da.
+                </p>
+                <a href=""><b>KHÁM PHÁ<i class="fa-solid fa-chevron-right"></i> </b></a>
+                <p style="margin-top: 45px;margin-bottom: 45px;">
+                    FUTURE SOLUTION LX<br /><b>
+                        NEW Legendary Enmei<br />
+                        Ultimate Brilliance Eye Cream
+                    </b>
+                </p>
+                <a href=""><b>KHÁM PHÁ <i class="fa-solid fa-chevron-right"></i></b></a>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .main {
+            position: relative;
+        }
+
+        .badge {
+            z-index:5;
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-color: #2879FE;
+            padding: 10px;
+            border-radius: 10px 0 0 10px;
+            background-color: #000000;
+        }
+
+        .main-5 {
+            height: 100%;
+            margin-bottom: 200px;
+            margin-top: 200px;
+            padding: 0;
+        }
+
+        .main-5-row-col-2 {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .main-5-row-col-1 {
+            text-align: center;
+        }
+
+            .main-5-row-col-1 a:hover {
+                opacity: .7;
+            }
+
+        .main-5-row-col-2 a:hover {
+            opacity: .7;
+        }
+
+        .main-5-row-col-1 h1 {
+            font-size: 5.5555vw;
+            padding-bottom: 20px;
+        }
+
+        .main-5-row-col-1 h3 {
+            font-size: calc(26 * 100vw / 1440);
+            padding-bottom: 10px;
+        }
+
+        .main-5-row-col-1 a {
+            color: #ce0e2d;
+            border-bottom-color: #ce0e2d;
+            border-bottom: 2px solid;
+        }
+
+        .main-5-row-col-2 a {
+            color: white;
+            background-color: black;
+            padding-left: 40px;
+            padding-top: 5px;
+            padding-bottom: 7px;
+            text-align: center;
+            width: 178px;
+            height: 36px;
+            left: 35%;
+            bottom: 3%;
+            position: absolute;
+        }
+
+        .main-5-row-col-2 {
+            position: relative;
+        }
+    </style>
+    <div class="main-6 container-fluid">
+        <div class="row main-6-row">
+            <div class="col main-6-row-col-1">
+                <h1><b>MAKE</b> UP</h1>
+                <h3>
+                    <b>
+                        MỚI Kem nền dạng lỏng<br /> REVITALESSENCE SKIN GLOW<br />
+                        Foundation<br />
+                        SPF 30 PA+++
+                    </b>
+                </h3>
+                <p>
+                    Da trở nên mềm mịn và sáng khỏe,<br />
+                    làm mờ rõ rệt đường nhăn chỉ trong 1 tuần.*<br /><br />
+
+                    Với sức mạnh của các hoạt chất chăm sóc da,<br />
+                    Men Kefir+ và Niacinamide.
+                </p>
+                <p style="color: #888888;margin-bottom: 25px;">*Dựa trên kiểm nghiệm người tiêu dùng trên 109 phụ nữ.</p>
+                <a href=""><b>KHÁM PHÁ<i class="fa-solid fa-chevron-right"></i> </b></a>
+                <p style="margin-top: 45px;margin-bottom: 45px;">
+                    <b>
+                        NEW<br />
+                        REVITALESSENCE SKIN GLOW<br />
+                        Foundation
+                    </b>
+                </p>
+                <a href=""><b>KHÁM PHÁ <i class="fa-solid fa-chevron-right"></i></b></a>
+            </div>
+            <div class="col main-6-row-col-2" style="background-image:url(/Assets/Client/images/main-6.jpg)">
+                <a href="">KHÁM PHÁ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;</a>
+            </div>
+        </div>
+    </div>
+    <style>
+        .main-6 {
+            height: 100%;
+            margin-bottom: 200px;
+            margin-top: 200px;
+        }
+
+        .main-6-row-col-2 {
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+
+
+        .main-6-row-col-1 {
+            text-align: center;
+        }
+
+            .main-6-row-col-1 a:hover {
+                opacity: .7;
+            }
+
+        .main-6-row-col-2 a:hover {
+            opacity: .7;
+        }
+
+        .main-6-row-col-1 h1 {
+            font-size: 5.5555vw;
+            padding-bottom: 20px;
+        }
+
+        .main-6-row-col-1 h3 {
+            font-size: calc(26 * 100vw / 1440);
+            padding-bottom: 10px;
+        }
+
+        .main-6-row-col-1 a {
+            color: #ce0e2d;
+            border-bottom-color: #ce0e2d;
+            border-bottom: 2px solid;
+        }
+
+        .main-6-row-col-2 a {
+            color: white;
+            background-color: black;
+            padding-left: 40px;
+            padding-top: 5px;
+            padding-bottom: 7px;
+            text-align: center;
+            width: 178px;
+            height: 36px;
+            left: 35%;
+            bottom: 3%;
+            position: absolute;
+        }
+
+        .main-6-row-col-2 {
+            position: relative;
+        }
+    </style>
+    <div class="main-7 container-fluid">
+        <div class="row main-7-row">
+            <div class="col main-7-row-col-2" style="background-image:url(/Assets/Client/images/main-7.jpg)">
+                <a href="">KHÁM PHÁ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;>&nbsp;&nbsp;</a>
+            </div>
+            <div class="col main-7-row-col-1">
+                <h1>
+                    <b>
+                        SUN
+                    </b>CARE
+                </h1>
+                <h3>
+                    <b>
+                        CHỐNG NẮNG - DƯỠNG DA
+                    </b>
+                </h3>
+                <p>
+                    Chống nắng tối ưu.<br />
+                    Dưỡng da vượt trội
+                </p>
+                <a href=""><b>KHÁM PHÁ<i class="fa-solid fa-chevron-right"></i> </b></a>
+                <div class="main-7-row-col-content d-flex px-5 ml-5">
+                    <div class="px-5">
+                        <p style="margin-top: 45px;margin-bottom: 45px;">
+                            <b>
+                                Kem chống nắng<br /> dưỡng da Urban<br /> Environment Triple<br /> Beauty Suncare<br /> Emulsion SPF50+
+                            </b>
+                        </p>
+                        <a href=""><b>KHÁM PHÁ <i class="fa-solid fa-chevron-right"></i></b></a>
+                    </div>
+                    <div class="px-5">
+                        <br /><br />
+                        <p style="margin-top: 45px;margin-bottom: 45px;">
+                            <b>
+                                Sữa chống nắng The<br /> Perfect Protector<br /> SPF50+ PA++++
+                            </b>
+                        </p>
+                        <a href=""><b>KHÁM PHÁ <i class="fa-solid fa-chevron-right"></i></b></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .main-7 {
+            height: 100%;
+            margin-bottom: 200px;
+            margin-top: 200px;
+            padding: 0;
+        }
+
+        .main-7-row-col-2 {
+            background-image: url("~/Assets/Client/images/main-7.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        main-7-content-1 {
+            padding: 100px 0;
+        }
+
+        .main-7-row-col-1 {
+            text-align: center;
+        }
+
+            .main-7-row-col-1 a:hover {
+                opacity: .7;
+            }
+
+        .main-7-row-col-2 a:hover {
+            opacity: .7;
+        }
+
+        .main-7-row-col-1 h1 {
+            font-size: 5.5555vw;
+            padding-bottom: 20px;
+        }
+
+        .main-7-row-col-1 h3 {
+            font-size: calc(26 * 100vw / 1440);
+            padding-bottom: 10px;
+        }
+
+        .main-7-row-col-1 a {
+            color: #ce0e2d;
+            border-bottom-color: #ce0e2d;
+            border-bottom: 2px solid;
+        }
+
+        .main-7-row-col-2 a {
+            color: white;
+            background-color: black;
+            padding-left: 40px;
+            padding-top: 5px;
+            padding-bottom: 7px;
+            text-align: center;
+            width: 178px;
+            height: 36px;
+            left: 35%;
+            bottom: 3%;
+            position: absolute;
+        }
+
+        .main-7-row-col-2 {
+            position: relative;
+        }
+    </style>
+    <div class="main-8 container-fluid">
+        <div class="main-8-content row">
+            <div class="col">
+                <div class="main-8-content-right">
+                    <a href="">
+                        <img src="~/Assets/Client/images/main_8_right.jpg" />
+                    </a>
+                </div>
+                <div class="main-8-content-box">
+                    <h3><b>PERSONALIZE<br /> YOUR SKINCARE<br /> ROUTINE</b></h3>
+                    <p>
+                        Get customized product<br />
+                        recommendations with our online skincare<br /> consultation.
+                    </p>
+                    <a href=""><b>START ONLINE CONSULTATION</b></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <style>
+        .main-8 {
+            margin: 200px 0;
+        }
+
+        .main-8-content {
+            background-image: url("~/Assets/Client/images/main-8-left.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .main-8-content-right {
+            margin-left: calc(40.5% + 50px);
+        }
+
+            .main-8-content-right a img {
+                border-style: none;
+                vertical-align: top;
+                max-width: 100%;
+            }
+
+                .main-8-content-right a img:hover {
+                    opacity: .9;
+                }
+
+        .main-8-content-box {
+            position: absolute;
+            left: 20%;
+            width: 438px;
+            padding: 38px;
+            text-align: left;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+        }
+
+            .main-8-content-box p {
+                font-size: 18px;
+                letter-spacing: .4px;
+                line-height: 24px;
+                margin-top: 30px;
+                margin-bottom: 30px;
+            }
+
+            .main-8-content-box a {
+                text-decoration: none;
+                font-size: 1.125rem;
+                border: 2px solid;
+                border-color: black;
+                color: black;
+                padding: 11px 30px;
+                margin-top: 20px;
+                font-family: ReaderMedium,Arial,sans-serif;
+                margin-left: 10px;
+            }
+    </style>
+    <div class="main-9">
+        <div class="main-9-content">
+            <a href="">
+                <img src="~/Assets/Client/images/main-9.jpg" />
+            </a>
+        </div>
+
+    </div>
+    <style>
+        .main-9 {
+            margin: 200px 0;
+        }
+
+        .main-9-content {
+            text-align: center;
+        }
+
+        .main-9 a img {
+            border-style: none;
+            max-width: 100%;
+        }
+
+            .main-9 a img:hover {
+                opacity: .9;
+            }
+    </style>
+</div>
+
+<style>
+
+    .main-4 {
+        margin-bottom: 200px;
+        margin-top: 200px;
+    }
+
+    .main-4-row {
+        margin: 50px 30px;
+        position: relative;
+    }
+
+    .main-4-row-col {
+        max-width: 300px;
+        margin: 0 16px;
+        height: 500px;
+        padding-bottom: 50px;
+        transition: border .75s;
+        background-color: #FBFBFB;
+    }
+
+        .main-4-row-col:hover {
+            border: 1px solid;
+            border-color: #262626;
+        }
+
+    .main-4-title {
+        text-align: center;
+        font-family: Arial,Medium,sans-serif;
+    }
+
+    .main-4-row-col-product {
+        color: black;
+    }
+
+        .main-4-row-col-product b {
+            font-size: 16px;
+        }
+
+    .main-4-row-col label {
+        font-size: 12px
+    }
+
+    .main-4-row-col-product-size {
+        color: #666;
+        font-size: 12px;
+        margin-top: 10px;
+    }
+
+    .main-4-row-col-details {
+        color: black;
+        position: absolute;
+        bottom: 3%;
+        border-bottom: 2px solid;
+        border-bottom-color: black;
+    }
+
+
+
+    .right-product {
+        padding-left: 40px;
+        padding-right: 40px;
+        position: relative;
+    }
+
+    .right-product-title p {
+        color: black;
+    }
+
+    .right-product-1 {
+        background-image: url("../Assets/Client/images/Softeners&Lotions.jpg");
+    }
+
+    .right-product-2 {
+        background-image: url("../Assets/Client/images/Moisturuzers&Creams.jpg");
+    }
+
+    .right-product-3 {
+        background-image: url("../Assets/Client/images/Serums.jpg");
+    }
+
+    .right-product-img {
+        background-repeat: no-repeat;
+        background-size: auto;
+        width: 320px;
+        height: 320px;
+    }
+
+    .right-product-title {
+        height: calc(60 * 100vw / 1440);
+        padding-left: calc(20 * 100vw / 1440);
+        font-size: calc(24 * 100vw / 1440);
+        width: 100%;
+        background: rgba(255, 255, 255, .4);
+        font-family: ReaderMedium;
+        position: absolute;
+        bottom: 0;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+        .right-product-title p {
+            padding-left: 15px;
+        }
+
+    .right-product-hover:hover {
+        opacity: .7;
+    }
+
+    .main-3 {
+        height: 100%;
+        margin-bottom: 200px;
+        margin-top: 200px;
+    }
+
+    .main-3-row-col-2 {
+        background-image: url("../Assets/Client/images/VPN_23AW.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+
+
+    .main-3-row-col-1 {
+        text-align: center;
+    }
+
+        .main-3-row-col-1 a:hover {
+            opacity: .7;
+        }
+
+    .main-3-row-col-2 a:hover {
+        opacity: .7;
+    }
+
+    .main-3-row-col-1 h1 {
+        font-size: 5.5555vw;
+        padding-bottom: 20px;
+    }
+
+    .main-3-row-col-1 h3 {
+        font-size: calc(26 * 100vw / 1440);
+        padding-bottom: 10px;
+    }
+
+    .main-3-row-col-1 a {
+        color: #ce0e2d;
+        border-bottom-color: #ce0e2d;
+        border-bottom: 2px solid;
+    }
+
+    .main-3-row-col-2 a {
+        color: white;
+        background-color: black;
+        padding-left: 40px;
+        padding-top: 5px;
+        padding-bottom: 7px;
+        text-align: center;
+        width: 178px;
+        height: 36px;
+        left: 35%;
+        bottom: 3%;
+        position: absolute;
+    }
+
+    .main-3-row-col-2 {
+        position: relative;
+    }
+</style>
+
+<script>
+    let slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        slideIndex++;
+        if (slideIndex > slides.length) { slideIndex = 1 }
+        slides[slideIndex - 1].style.display = "block";
+        setTimeout(showSlides, 6000); // Change image every 2 seconds
+    }
+</script>
+
+
+
+

@@ -1,0 +1,146 @@
+﻿@model DoAn.Models.Products
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+<div class="container-fluid">
+    <div class="card shadow mb-4" style="max-width: 1240px">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                <a href="@Url.Action("DanhSach","Orders")" style="float:right">Danh sách đơn hàng</a>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <div>
+                    <dl class="dl-horizontal">
+                        <h4 style="color: #2E59D9"><b>Chi tiết sản phẩm</b></h4>
+                        <hr />
+                        <dt style="color: #2E59D9">
+                            Tên sản phẩm
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.ProductName)
+                        </dd>
+                        <dt style="color: #2E59D9">
+                            Mô tả
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Description)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Giá bán
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Price)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Ảnh đại diện
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Thumb)
+                        </dd>
+
+
+
+                        <dt style="color: #2E59D9">
+                            Ngày tạo
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.DateCreated)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Bán chạy
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.BestSellers)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Home Flag
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.HomeFlag)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Hoạt động
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Active)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Tiêu đề
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Title)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Size
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Size)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Ảnh 1
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Picture1)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Ảnh 2
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Picture2)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Ảnh 3
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Picture3)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Ảnh 4
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Picture4)
+                        </dd>
+
+                        <dt style="color: #2E59D9">
+                            Loại sản phẩm
+                        </dt>
+
+                        <dd>
+                            @Html.DisplayFor(model => model.Category.CateName)
+                        </dd>
+
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

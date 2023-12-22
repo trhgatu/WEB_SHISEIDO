@@ -1,0 +1,92 @@
+﻿@model IEnumerable<DoAn.Models.Accounts>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="card shadow mb-4" style="max-width: 1240px">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">
+                <a href="@Url.Action("Create","Accounts")" style="float:right">Thêm mới</a>
+            </h6>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                           Tên đăng nhập
+                        </th>
+
+                        <th>
+                            Mật khẩu
+                        </th>
+                        <th>
+                            Họ và tên
+                        </th>
+                        <th>
+                           Số điện thoại
+                        </th>
+                        <th>
+                           Email
+                        </th>
+                        <th>
+                            Hoạt động
+                        </th>
+                        <th>
+                            Ảnh đại diện
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.AccountID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.UserName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Password)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.FullName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Active)
+                            </td>
+
+
+
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Avatar)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

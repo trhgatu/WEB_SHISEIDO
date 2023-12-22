@@ -1,0 +1,353 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <link href="~/Assets/Client/css/style_trangchu.css" type="text/css" rel="stylesheet" />
+    <link href="~/Assets/Client/css/style_product.css" type="text/css" rel="stylesheet" />
+    <link href="~/Assets/Client/other/fontawesome-free-6.4.2-web/css/all.min.css" rel="stylesheet" />
+    <script src="~/Assets/Client/other/fontawesome-free-6.4.2-web/js/all.js"></script>
+    <script src="~/Assets/Client/js/popper.js"></script>
+    <link rel="icon" href="https://www.shiseido.com.vn/on/demandware.static/Sites-shiseido_global_vn-Site/-/default/dwd6c80465/images/camellia-logo.svg">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar navbar-expand-xl">
+            <header class="container-fluid header" style="align-items:center">
+                <a class="navbar-brand" href="@Url.Action("Home","Home")">
+                    <img src="~/Assets/Client/images/logo-shiseido.png" width="125" title="Shiseido" />
+                    <button class="navbar-toggler" title="logo" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </a>
+                <div class="navbar navbar-menumain" style="padding-left: 130px;">
+                    <div class="dropdown">
+                        <button class="dropbtn" type="button" title="chamsocda">
+                            <b style=" font-size: 14px; font-weight:700">CHĂM SÓC DA</b>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="row">
+                                <a class="title-all" href="@Url.Action("AllChamSocDa","Products")"><b>All Chăm sóc da</b></a>
+                                <div class="column column-1">
+                                    <ul class="column-category" style="list-style-type:none">
+                                        <li><a href="#"><b>Dòng sản phẩm</b></a></li>
+                                        <li> <a href="#">Ultimune</a></li>
+                                        <li> <a href="#">Essential Energy</a></li>
+                                        <li> <a href="#">Defend Beauty</a></li>
+                                        <li><a href="#">Future Solution LX</a></li>
+                                        <li>  <a href="#">Vital-Perfection</a></li>
+                                        <li>  <a href="#">White Lucent</a></li>
+                                        <li> <a href="#">Benefiance</a></li>
+                                        <li> <a href="#">Eudermine</a></li>
+                                    </ul>
+                                </div>
+                                <div class="column column-1">
+                                    <ul class="column-category" style="list-style-type:none">
+                                        <li><a href="@Url.Action("Category", "Category")"><b>Hạng mục</b></a></li>
+                                        <li> <a href="#">Bảo Vệ Da</a></li>
+                                        <li> <a href="#">Tẩy Trang & Làm Sạch</a></li>
+                                        <li><a href="#">Nước Làm Mềm & Cân Bằng</a></li>
+                                        <li> <a href="#">Kem Dưỡng</a></li>
+                                        <li> <a href="#">Chăm Sóc Mắt & Môi</a></li>
+                                        <li> <a href="#">Tính Chất</a></li>
+                                        <li> <a href="#">Chống Nắng</a></li>
+                                        <li> <a href="#">Mặt Nạ</a></li>
+                                        <li> <a href="#">Dưỡng Toàn Thân, Cổ và Tay</a></li>
+                                        <li> <a href="#">Dụng Cụ và Bông Tẩy Trang</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn" title="trangdiem">
+                            <b style=" font-size: 14px; font-weight:700">TRANG ĐIỂM</b>
+                        </button>
+                        <div class="dropdown-content">
+                            <div class="row">
+                                <a class="title-all" href=""><b>ALL Trang Điểm</b></a>
+                                <div class="column column-2">
+                                    <a href="#"><b>Trang Điểm Môi</b></a>
+                                    <a href="#">Son Thỏi</a>
+                                    <a href="#">Son Bóng</a>
+                                    <a href="#">Cọ Trang Điểm Môi</a>
+                                </div>
+                                <div class="column column-2">
+                                    <a href="#"><b>Trang Điểm Nền</b></a>
+                                    <a href="#">Phấn Nền</a>
+                                    <a href="#">Kem Lót</a>
+                                    <a href="#">Che Khuyết Điểm</a>
+                                    <a href="#">Phấn Phủ</a>
+                                    <a href="#">Cọ Trang Điểm, Hộp Phấn & Lõi Phấn</a>
+                                </div>
+                                <div class="column column-2">
+                                    <a href="#"><b>Trang Điểm Mắt</b></a>
+                                    <a href="#">Phấn Mắt</a>
+                                    <a href="#">Vẽ Viền Mắt</a>
+                                    <a href="#">Mascara</a>
+                                    <a href="#">Vẽ Chân Mày</a>
+                                    <a href="#">Dưỡng Dài Mi</a>
+                                    <a href="#">Cọ và Dụng Cụ</a>
+                                </div>
+                                <div class="column column-2">
+                                    <a href="#"><b>Trang Điẻm Má</b></a>
+                                    <a href="#">Phấn Má Hồng</a>
+                                    <a href="#">Cọ Trang Điểm</a>
+                                </div>
+                                <div class="column column-2">
+                                    <a href="#"><b>Dụng Cụ & Phụ Kiện</b></a>
+                                    <a href="#">Bộ Cọ</a>
+                                    <a href="#">Bông Phấn & Bọt Biển</a>
+                                    <a href="#">Hộp Phấn & Lõi Phấn</a>
+                                    <a href="#"><b>Đa Chức Năng</b></a>
+                                    <a href="#"><b>Foundation Finder</b></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn" title="chongnang">
+                            <b style=" font-size: 14px; font-weight:700">CHỐNG NẮNG</b>
+                        </button>
+                        <div class="dropdown-content">
+                            <a class="title-all" href=""><b>ALL Chống Nắng</b></a>
+                            <div class="row">
+                                <div class="column column-3">
+                                    <a href="#"><b>Hạng Mục</b></a>
+                                    <a href="#">Chống Nắng</a>
+                                    <a href="#">Hoạt Động Ngoài Trời</a>
+                                    <a href="#">Chống Nắng Dành Cho Mắt & Môi</a>
+                                </div>
+                                <div class="column column-3">
+                                    <a href="#"><b>Mối Quan Tâm</b></a>
+                                    <a href="#">SPF > 50</a>
+                                    <a href="#">Da Nhạy Cảm</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown">
+                        <button class="dropbtn" title="danhchonam">
+                            <b style=" font-size: 14px; font-weight:700">DÀNH CHO NAM</b>
+                        </button>
+                        <div class="dropdown-content">
+                            <a class="title-all" href=""><b>ALL Dành Cho Nam</b></a>
+                            <div class="row">
+                                <div class="column column-4">
+                                    <a href="#"><b>Hạng Mục</b></a>
+                                    <a href="#">Rữa Mặt & Cạo Râu</a>
+                                    <a href="#">Lotion Làm Mềm Da</a>
+                                    <a href="#">Tính Chất</a>
+                                    <a href="#">Dưỡng Ẩm</a>
+                                    <a href="#">Chăm Sóc Mắt</a>
+                                    <a href="#">Chống Nắng</a>
+                                    <a href="#">Hoàn Thiện Vẻ Ngoài</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <ul class="navbar-nav d-flex" style="align-items: center; padding-right: 20px;">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            @using (Html.BeginForm("TimKiem", "Products", FormMethod.Get))
+                            {
+                                <form class="expanding-search-form" style="padding-top:10px">
+                                    <div class="input-group">
+                                        <span class="input-group-addon" id="basic-addon1">
+                                            <input name="searchString" id="searchString" type="search" value="@ViewBag.KeyWord" class="form-control search-input" required placeholder="Search" aria-label="Daftar Saran" aria-describedby="basic-addon1" style="height:auto">
+                                        </span>
+                                    </div>
+                                </form>
+                            }
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+
+                        <div class="dropdown-customer" style="float:right;">
+                            <button class="dropbtn-customer"><i class="fa-solid fa-user fa-xl nav-item" style="color: #ffffff;"></i></button>
+                            <div class="dropdown-content-customer">
+                                <ul style="list-style-type:none; padding: 0">
+                                    @{ var cus = Session["User"] as DoAn.Models.Customers;}
+                                    @{
+                                        if (cus == null)
+                                        {
+                                            <li>@Html.ActionLink("Đăng nhập", "Login", "Home")</li>
+                                            <li>@Html.ActionLink("Đăng ký", "Register", "Home")</li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="@Url.Action("Profile","Customers")">Tài khoản: @cus.Username</a></li>
+
+                                            <li>@Html.ActionLink("Đăng xuất", "Logout", "Home")</li>
+                                        }
+
+                                    }
+
+
+                                </ul>
+                            </div>
+                        </div>
+
+                    <li class="nav-item" style="padding:7px;">
+                        @Html.Action("GioHangPartial", "Cart")
+
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Contact","Home")"><i class="fa-solid fa-comment-dots fa-xl nav-item" style="color: #ffffff;"></i></a>
+                    </li>
+
+                </ul>
+            </header>
+        </div>
+    </nav>
+
+    <div class="main">
+        @RenderBody()
+    </div>
+    @*Footer*@
+    <footer class="bg-black">
+        <div class="container">
+            <div class="footer-1">
+                <div class="row text-white">
+                    <div class="col-4">
+                        <h2><b>HỖ TRỢ TƯ VẤN</b></h2>
+                        <p>Hãy liên hệ với chuyên gia Shiseido.</p>
+                    </div>
+                    <div class="col-4">
+                        <h2><b>BE IN THE KNOW</b></h2>
+                        <p>Sign Up for latest news, sales and deals.</p>
+                    </div>
+                    <div class="col-3">
+                        <h2><b>CỬA HÀNG SHISEIDO</b></h2>
+                        <p>Hãy đến ngay cửa hàng Shiseido để được chăm sóc tốt nhất.</p>
+                    </div>
+                </div>
+                <div class="row text-white">
+                    <div class="col">
+                        <a class="ft-btn-1" href="#">
+                            <b>HỆ VỚI SHISEIDO</b>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="ft-btn-1" href="#">
+                            <b>NEWSLETTER SIGN IP</b>
+                        </a>
+                    </div>
+                    <div class="col">
+                        <a class="ft-btn-1" href="#">
+                            <b>DANH SÁCH CỬA HÀNG</b>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-2 row">
+                <div class="footer-2-1 col-9">
+                    <h6>VỀ SHISEIDO</h6><br />
+                    <a href="#">Lịch sử phát triển</a><br />
+                    <a href="#">Điều khoản sử dụng</a><br />
+                    <a href="#">Thông Báo Về Bảo Vệ<br />Thông Tin Cá Nhân</a><br />
+                    <a href="#">Điều khoản Cookies</a>
+                </div>
+                <div class="col-3 row">
+                    <a href="#" class="col"><i class="fa-brands fa-square-facebook fa-lg" style="color: #666;"></i></a>
+                    <a href="#" class="col"><i class="fa-brands fa-youtube fa-lg" style="color: #666;"></i></a>
+                    <a href="#" class="col"><i class="fa-brands fa-instagram fa-lg" style="color: #666;"></i></a>
+                </div>
+            </div>
+            <div class="footer-3 row">
+                <div class="col-3">
+
+                </div>
+                <div class="col-9 footer-3-2">
+                    <p style="text-align: right;">
+                        Công ty TNHH Mỹ Phẩm Shiseido Việt Nam.<br />
+                        ĐC: Lầu 27, Vietcombank Tower, 05 Công Trường Mê Linh, Phường Bến Nghé, Quận 1, Tp.HCM, Việt Nam<br />
+                        ĐT: 0283 9101 222 – Hotline: 1900 633 915<br />
+                        Email: chamsockhachhang@scv.shiseido.vn<br />
+                        Số giấy Phép ĐKKD : 0309672832<br />
+                        Ngày cấp: 07/12/2009
+                    </p>
+                    <br />
+                    <p style="text-align: right;">
+                        <a href="http://online.gov.vn/Home/WebDetails/57320"><img src="~/Assets/Client/images/dathongbao.png" title="Da Thong Bao" style="width: 100px;" /></a>
+                    </p>
+                    <br />
+                    <p style="text-align: right;">Copyright ©2023 Shiseido Cosmetics Vietnam Co.,Ltd. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+<style>
+    .dropbtn-customer {
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        background-color: black;
+    }
+
+        .dropbtn-customer button:hover {
+            border-bottom: 5px solid;
+            border-bottom-color: white;
+        }
+
+    .dropdown-customer {
+        position: relative;
+        display: inline-block;
+    }
+
+    .dropdown-content-customer {
+        display: none;
+        position: absolute;
+        right: 0;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+        z-index: 1;
+        background-color: white;
+    }
+
+        .dropdown-content-customer a {
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            color: black;
+        }
+
+            .dropdown-content-customer a:hover {
+                font-size: 14px;
+                font-family: Arial,Medium,sans-serif;
+                border: none;
+                outline: none;
+                color: white;
+                background-color: inherit;
+                font: inherit;
+                margin: 0;
+                color: white;
+            }
+
+        .dropdown-content-customer li:hover {
+            background-color: black;
+        }
+
+    .dropdown-customer:hover .dropdown-content-customer {
+        display: block;
+    }
+
+    .dropdown-customer:hover .dropbtn-customer {
+        border-bottom: 5px;
+        border-color: white;
+    }
+</style>

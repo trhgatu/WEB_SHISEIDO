@@ -1,0 +1,80 @@
+﻿@model DoAn.Models.Customers
+
+@{
+    ViewBag.Title = "Login";
+    Layout = null;
+}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Đăng nhập</title>
+
+    <!-- Font Icon -->
+    <link href="~/Assets/Client/css/style_font.css" rel="stylesheet" />
+
+    <!-- Main css -->
+    <link href="~/Assets/Client/css/style_register_login.css" rel="stylesheet" />
+</head>
+<nav>
+    <div class="navbar navbar-expand-xl">
+        <header class="container-fluid header" style="align-items:center; display: flex">
+            <div class="logo-brand" style="padding-left: 20px"     >
+                <a class="navbar-brand" href="@Url.Action("Home","Home")">
+                    <img src="~/Assets/Client/images/logo-shiseido.png" width="125" title="Shiseido" />
+
+                </a>
+            </div>
+            
+        </header>
+    </div>
+</nav>
+
+<section class="sign-in">
+    <div class="container">
+        <div class="signin-content">
+            <div class="signin-image">
+                <figure><img src="~/Assets/Client/images/signin-image.jpg" alt="sing up image"></figure>
+                <a href="@Url.Action("Register","Home")" class="signup-image-link">Đăng ký tài khoản</a>
+            </div>
+
+            <div class="signin-form">
+                <h2 class="form-title">Đăng nhập</h2>
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+
+                    <div class="form-horizontal">
+
+                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                        <div class="form-group">
+                            <p>Tên đăng nhập</p>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <p>Mật khẩu</p>
+                            <div class="col-md-10">
+                                @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        @ViewBag.LoginFail
+                        <div class="form-group">
+                            <div class="col-md-10">
+                                <input type="submit" value="Đăng nhập" class="btn btn-success"/>
+                            </div>
+                        </div>
+                    </div>
+                }
+                
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="~/Assets/Client/vendor/jquery.min.js"></script>
+<script src="~/Assets/Client/js/main.js"></script>

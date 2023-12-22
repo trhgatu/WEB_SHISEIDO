@@ -1,0 +1,202 @@
+﻿
+@using DoAn.Models
+
+@model IEnumerable<Products>
+@{
+    ViewBag.Title = "TimKiem";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+
+
+<div class="main">
+    <div class="main-menu-colections">
+        <div class="main-menu-collections-wrap">
+           
+        </div>
+
+        <div class="category-container">
+            <div class="banner-title">
+                <div class="content">
+                    <h1 class="title">Category</h1>
+                </div>
+            </div>
+            <div class="banner-picture">
+                <a href="#">
+                    <div class="banner-picture-hover">
+                        <img class="lazy-loader" src="~/Assets/Client/images/PLP_23SS_SKINCARE_04_banner_pc.jpg" />
+                    </div>
+                </a>
+            </div>
+            <div class="products-category-wrapper">
+                <div class="toolbar-row">
+                    <div class="toolbar-wrapper">
+                        <ul class="nav">
+                            <li class="button-dropdown">
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    Collection
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            BENEFIANCE
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            ESSENTIAL ENERGY
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            FUTURE SOLUTION LX
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            SHISEIDO
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            SHISEIDO EUDERMINE
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            ULTIMUNE
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="button-dropdown">
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    Concern
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            Bóng nhờn
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            Da Chảy Xệ/ Mất Độ Đàn Hồi
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            Da Không Đều Màu
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            Dark Circles & Puffiness
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            Dark Spots & Sun Spots
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            Dấu Hiệu Lão Hóa
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="button-dropdown">
+                                <a href="javascript:void(0)" class="dropdown-toggle">
+                                    Show Newest
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            Mới
+                                        </a>
+                                    </li>
+                                    <li class="filter-option-selected">
+                                        <a class="dropdown-menu-checkbox" href="#">
+                                            <i class="icon icon-check-mark filter-check-mark"></i>
+                                            Newest
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row main-product">
+        @foreach (var item in Model)
+        {
+            <div class="col-3 product-tdm">
+                <div class="slideshow-container ">
+                    <img src="~/Assets/Client/images/@item.Thumb" class="img-products">
+                    <div class="title-product">
+                        <a href="#">
+                            <h4>@Html.DisplayFor(modelItem => item.Category.CateName)</h4>
+                            <h5>@item.ProductName</h5>
+                        </a>
+                    </div>
+                    <div class="link-products-detail">
+                        <a class="product-details" href="@Url.Action("XemChiTiet", "Products", new { @id = item.ProductID})">
+                            Xem Chi Tiết
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        }
+    </div>
+</div>
+
+
+
+
+<script>
+    jQuery(document).ready(function (e) {
+        function t(t) {
+            e(t).bind("click", function (t) {
+                t.preventDefault();
+                e(this).parent().fadeOut()
+            })
+        }
+        e(".dropdown-toggle").click(function () {
+            var t = e(this).parents(".button-dropdown").children(".dropdown-menu").is(":hidden");
+            e(".button-dropdown .dropdown-menu").hide();
+            e(".button-dropdown .dropdown-toggle").removeClass("active");
+            if (t) {
+                e(this).parents(".button-dropdown").children(".dropdown-menu").toggle().parents(".button-dropdown").children(".dropdown-toggle").addClass("active")
+            }
+        });
+        e(document).bind("click", function (t) {
+            var n = e(t.target);
+            if (!n.parents().hasClass("button-dropdown")) e(".button-dropdown .dropdown-menu").hide();
+        });
+        e(document).bind("click", function (t) {
+            var n = e(t.target);
+            if (!n.parents().hasClass("button-dropdown")) e(".button-dropdown .dropdown-toggle").removeClass("active");
+        })
+    });
+</script>

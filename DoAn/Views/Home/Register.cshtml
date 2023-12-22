@@ -1,0 +1,113 @@
+﻿@model DoAn.Models.Customers
+
+@{
+    ViewBag.Title = "Register";
+    Layout = null;
+}
+<link href="~/Assets/Client/css/style_font.css" rel="stylesheet" />
+<link href="~/Assets/Client/css/style_register_login.css" rel="stylesheet" />
+<title>Đăng ký tài khoản</title>
+<!-- Main css -->
+<nav>
+    <div class="navbar navbar-expand-xl">
+        <header class="container-fluid header" style="align-items:center; display: flex">
+            <div class="logo-brand" style="padding-left: 20px">
+                <a class="navbar-brand" href="@Url.Action("Home","Home")">
+                    <img src="~/Assets/Client/images/logo-shiseido.png" width="125" title="Shiseido" />
+
+                </a>
+            </div>
+
+        </header>
+    </div>
+</nav>
+<div class="main">
+    <!-- Sign up form -->
+    <section class="signup">
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <h2 class="form-title">Đăng ký</h2>
+                    @using (Html.BeginForm())
+                    {
+                        @Html.AntiForgeryToken()
+
+                        <div class="form-horizontal">
+
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                <p>Họ tên</p>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.FullName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.FullName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Tài khoản</p>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+                            <div class="form-group">
+                                <p>Địa chỉ</p>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Address, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Address, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Email</p>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <p>Số điện thoại</p>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <p>Mật khẩu</p>
+                                <div class="col-md-10">
+                                    @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+                            <div class="form-group">
+                                <div class="col-md-offset-2 col-md-10">
+                                    <input type="submit" value="Tạo tài khoản" class="btn btn-default" />
+                                </div>
+                            </div>
+                        </div>
+                    }
+
+                    <div class="signup-image">
+                        <figure><img src="~/Assets/Client/images/signup-image.jpg" alt="sing up image"></figure>
+                        <a href="@Url.Action("Login","Home")" class="signup-image-link">Đã có tài khoản ? Đăng nhập</a>
+                    </div>
+                </div>
+            </div>
+    </section>
+</div>
+
+
+
+<script src="~/Assets/Client/vendor/jquery.min.js"></script>
+<script src="~/Assets/Client/js/main.js"></script>
